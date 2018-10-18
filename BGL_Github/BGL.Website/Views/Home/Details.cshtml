@@ -1,0 +1,55 @@
+﻿@model BGL.PresentationModels.GithubUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="hidden-xs hidden-md col-lg-1">
+        
+    </div>
+    <div class="col col-sm-12 col-md-4 col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col text-center">
+                        <img class="img-thumbnail" src="@Html.Raw(Model.AvatarUrl)" alt="User Avatar" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <h4 class="userNameHeader" >    @Html.DisplayFor(model => model.Username)</h4>
+                        <h5 class="userLocationHeader"> @Html.DisplayFor(model => model.Location)</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col col-sm-12 col-md-8 col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Stargazers</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var item in Model.Repos)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Description</td>
+                                <td>@item.StargazerCount</td>
+                                <td><a href="@item.Url">Visit Repo</a></td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

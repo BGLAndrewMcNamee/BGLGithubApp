@@ -1,0 +1,44 @@
+﻿@model BGL.Website.Models.Search
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+    <div class="col-xs-1 col-xs-1 col-sm-2 col-md-3 col-lg-4"></div>
+    <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
+
+        @using (Html.BeginForm("Details", "Home", FormMethod.Post,
+                                      new { enctype = "multipart/form-data" }))
+        {
+
+
+         <div class="card">
+             <div class="card-body padded20">
+
+
+                 <div class="row">
+                     <div class="col text-center">
+                         <img class=" img-fluid" src="~/Content/Images/GitHub-Mark-120px-plus.png" />
+                         <h4 class="padded20">Github User Search</h4>
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col">
+                         <div class="input-group mb-3">
+                             <div class="input-group-prepend">
+                                 <span class="input-group-text" id="basic-addon1"></span>
+                             </div>
+                             @Html.TextBoxFor(model => model.SearchTerm, null, new { @class = "form-control", @placeholder = "Username", @autocomplete = "off", @required = "true" })
+                         </div>
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col">
+                         <input type="submit" class="btn btn-outline-success pull-right" />
+                     </div>
+                 </div>       
+             </div>
+         </div>
+        }
+    </div>
+</div>
+

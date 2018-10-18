@@ -1,0 +1,23 @@
+﻿body {
+    background-color:#eeeeee;
+}
+
+.layoutContainer{
+    padding-top: 100px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.padded20{
+    padding:20px;
+}
+
+.userLocationHeader {
+    color: #808080;
+    margin: 10px;
+}
+
+.userNameHeader{
+    margin:10px;
+
+}
